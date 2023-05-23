@@ -7,11 +7,12 @@ import ct1 from '../../assets/home/slide1.jpg';
 import ct2 from '../../assets/home/slide2.jpg';
 import ct3 from '../../assets/home/slide3.jpg';
 import ct4 from '../../assets/home/slide4.jpg';
+import SectionTitle from "../../components/SectionTitle";
 
 const Category = () => {
   return (
     <div className="max-w-screen-lg m-auto my-7">
-      
+        <SectionTitle subHeading={'From 11:00am to 10:00pm'} heading={'ORDER ONLINE'}></SectionTitle>
       <Swiper
         slidesPerView={4}
         spaceBetween={30}
