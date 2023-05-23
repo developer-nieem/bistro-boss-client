@@ -1,0 +1,7 @@
+.featured-section{
+    background: url('../../../assets/home/banner.jpg');
+  
+background-attachment: fixed;
+background-color: rgba(0, 0, 0, 0.678);
+background-blend-mode: multiply;
+}
