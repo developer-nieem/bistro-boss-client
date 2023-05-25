@@ -6,6 +6,7 @@ import "react-tabs/style/react-tabs.css";
 import useMenu from "../../../Hooks/useMenu";
 import FoodCard from "../../../components/FoodCard";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const OrderFood = () => {
 
@@ -26,6 +27,9 @@ const OrderFood = () => {
 
   return (
     <div>
+         <Helmet>
+        <title>Bistro Boss Restaurants | Order Foods</title>
+      </Helmet>
       <Cover
         img={orderCover}
         title="OUR FOODS"
