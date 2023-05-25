@@ -1,6 +1,6 @@
 import SectionTitle from "../../components/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
-import '@smastrom/react-rating/style.css'
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
