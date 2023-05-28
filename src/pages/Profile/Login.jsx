@@ -102,8 +102,9 @@ const Login = () => {
                   />
                   
                 </div>
+                {/* after development make button disabeled */}
                 <div className="form-control mt-6">
-                  <button disabled={disabeld} className="btn btn-primary">
+                  <button disabled={false} className="btn btn-primary">
                     Login
                   </button>
                   <p> New User ?   <Link className="underline" to='/register'> Register</Link> </p>

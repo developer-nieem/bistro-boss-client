@@ -4,18 +4,20 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const FoodCard = ({ item }) => {
-  const { name, recipe, image, price } = item;
+  const { name, recipe, image, price, _id } = item;
   const {user} = useContext(AuthContext)
   const navigate = useNavigate()
+
   const handelCartFood = (item) => {
     console.log(item);
-    if (user) {
+    const orderItem =  {menuId : _id , name, recipe, image, price, email:user.email }
+    if (user && user.email) {
       fetch('http://localhost:3000/carts' ,{
         method: 'POST',
         headers: {
           'content-type': 'application/json'
         },
-        body: JSON.stringify(item)
+        body: JSON.stringify(orderItem)
       })
       .then(res => res.json())
       .then(data => {
@@ -23,7 +25,7 @@ const FoodCard = ({ item }) => {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Your work has been saved',
+            title: 'Added the Cart',
             showConfirmButton: false,
             timer: 1500
           })
