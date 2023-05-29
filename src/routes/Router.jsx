@@ -8,6 +8,9 @@ import OrderFood from "../pages/OrderFood/OrderFood/OrderFood";
 import Login from "../pages/Profile/Login";
 import Register from "../pages/Profile/Register";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
+import ManageItem from "../pages/Dashboard/ManageItem";
+import AdminHome from "../pages/Dashboard/AdminHome";
 
 
   export const router = createBrowserRouter([
@@ -36,5 +39,19 @@ import PrivateRoute from "./PrivateRoute";
     {
       path:'/register',
       element: <Register></Register>
+    },
+    {
+      path:'/admin',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'admin',
+          element: <AdminHome></AdminHome>
+        },
+        {
+          path : 'manageItem',
+          element: <ManageItem></ManageItem>
+        }
+      ]
     }
   ]);

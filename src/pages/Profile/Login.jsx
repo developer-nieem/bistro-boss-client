@@ -10,13 +10,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
     const {user , loginUser} = useContext(AuthContext);
   
-  const refInput = useRef();
   const [disabeld, setDisabeld] = useState(true);
 
   let navigate = useNavigate();
   let location = useLocation();
 
-  let from = location.state?.from?.pathname || "/";
+  let from = location?.state?.from?.pathname || '/';
+
+  console.log(from);
 
   useEffect(() => {
     loadCaptchaEnginge(6);
