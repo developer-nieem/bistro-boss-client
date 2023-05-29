@@ -18,12 +18,24 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 bg-[#D1A054] text-base-content">
             <li>
-            <NavLink to='admin'>Admin </NavLink>
+            <NavLink to='admin'>User Home </NavLink>
             </li>
             <li>
-              
-              <NavLink to='manageItem'>Manage Item</NavLink>
+              <NavLink to='/'>Reservation</NavLink>
             </li>
+            <li>
+              <NavLink to='/'>Payment History</NavLink>
+            </li>
+            <li>
+              <NavLink to='manageItem'>My Cart</NavLink>
+            </li>
+            <li>
+              <NavLink to='/'>Add review</NavLink>
+            </li>
+            <li>
+              <NavLink to='/'>My Booking</NavLink>
+            </li>
+            <div className="divider border-gray-50 text-white"></div>
           </ul>
         </div>
       </div>
