@@ -57,13 +57,13 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col ">
+      <div className=" min-h-screen bg-base-200">
+        <div className="hero-content  flex-col ">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">Provident cupiditate voluptatem et in.</p>
           </div>
-          <div className="card w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card w-4/12 m-auto shadow-2xl bg-base-100">
             <div className="card-body">
               <form onSubmit={loginHandlar}>
                 <div className="form-control">
@@ -108,7 +108,7 @@ const Login = () => {
                   <button disabled={false} className="btn btn-primary">
                     Login
                   </button>
-                  <p> New User ?   <Link className="underline" to='/register'> Register</Link> </p>
+                  <p className="text-center my-4"> New User ?   <Link className="underline" to='/register'> Register</Link> </p>
                 </div>
               </form>
             </div>
