@@ -42,7 +42,7 @@ import AdminHome from "../pages/Dashboard/AdminHome";
     },
     {
       path:'/admin',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute> ,
       children: [
         {
           path: 'admin',
