@@ -1,11 +1,35 @@
 import { useQuery } from "@tanstack/react-query";
 import { FaTrash, FaUsers } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const AllUser = () => {
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     const res = await fetch("http://localhost:3000/users");
     return res.json();
   });
+
+
+  const updateUserHandler = (user) => {
+    fetch(`http://localhost:3000/users/admin/${user._id}`, {
+        method: 'PATCH'
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.modifiedCount) {
+            refetch()
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `${user.name} is an admin `,
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+    })
+  }
+  const deleteUserHandler = () => {
+
+  }
   return (
     <div>
       <h2 className="text-2xl my-4 font-semibold">Total Users : {users.length}</h2>
@@ -31,9 +55,9 @@ const AllUser = () => {
                     <th>{index + 1}
                     </th>
                     <td>{user.name}</td>
-                    <td>{users.email}</td>
-                    <td> <button className="btn btn-success"> <FaUsers></FaUsers> </button> </td>
-                    <td> <button className="btn btn-error"> <FaTrash></FaTrash> </button> </td>
+                    <td>{user.email}</td>
+                    <td> {user.role === "admin" ? <button className="btn">Admin</button> :  <button onClick={ () => updateUserHandler(user)} className="btn btn-success"> <FaUsers></FaUsers> </button>} </td>
+                    <td> <button onClick={deleteUserHandler} className="btn btn-error"> <FaTrash></FaTrash> </button> </td>
                   </tr>
                 </>)
             }

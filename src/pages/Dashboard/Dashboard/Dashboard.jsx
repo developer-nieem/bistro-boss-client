@@ -1,14 +1,17 @@
 import { FaBars, FaBook, FaEnvelope, FaHome, FaShoppingBag, FaUsers, FaUtensils, FaWallet } from "react-icons/fa";
+
 import { NavLink, Outlet } from "react-router-dom";
+
 
 const Dashboard = () => {
 
-    const isAdmin = true;
+    const isAdmin = false;
+
   return (
     <div>
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
+        <div className="drawer-content ">
             <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
